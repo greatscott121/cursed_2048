@@ -1,11 +1,16 @@
 var incLeft = 0;
-! function() {alert();
+! function() 
+{;//{alert();
     function t(t) {
-        return Math.min((0 | .04 * Math.PI * t) << 1, 16)
+        //original
+        //return Math.min((0 | .4 * Math.PI * t) << 1, 16)
+        return Math.min((0 | 2 * Math.PI * t) << 1, 16)
     }
 
     function e() {
-        P = new q(255, 360, 450, 180, !1)
+        //back cushion dims
+        //P = new q(255, 360, 450, 180, !1)
+        P = new q(55, 360, 850, 180, !1)
     }
 
     function n() {
@@ -75,7 +80,7 @@ var incLeft = 0;
                         l < n && l < o && (o = l, i = f, r = a)
                     }
                 }
-                if (!i) return "continue";
+                if (!i) return "continue"; //merge location
                 var _ = .5 * (e.center.x + i.center.x),
                     h = .5 * (e.center.y + i.center.y);
                 if (o > 2 * e.r) {
@@ -119,7 +124,9 @@ var incLeft = 0;
 
     function h() {
         for (var t = 2; t <= 2048; t *= 2) it[t] = 0;
-        at = new q(280, 480, 400, 60), ct = new q(220, 420, 60, 120), ft = new q(680, 420, 60, 120), new w(at, at.handle0, ct.handle0, .1), new w(at, at.handle1, ft.handle1, .1);
+        //couch size
+        //at = new q(280, 480, 400, 60), ct = new q(220, 420, 60, 120), ft = new q(680, 420, 60, 120), new w(at, at.handle0, ct.handle0, .1), new w(at, at.handle1, ft.handle1, .1);
+        at = new q(80, 480, 800, 60), ct = new q(20, 420, 60, 120), ft = new q(880, 420, 60, 120), new w(at, at.handle0, ct.handle0, .1), new w(at, at.handle1, ft.handle1, .1);
         var e = .5 * S;
         new E(.35 * T, e), new E(.65 * T, e)
     }
@@ -243,7 +250,7 @@ var incLeft = 0;
                     t.lineTo(s.x, s.y)
                 }
                 t.fillStyle = e || "#00B0FF", t.fill()
-            }, e.chamfer = 10, e
+            }, e.chamfer = 10, e //cushion corner roundness
         }(m),
         g = this && this.__extends || function(t, e) {
             function n() {
@@ -253,15 +260,32 @@ var incLeft = 0;
             t.prototype = null === e ? Object.create(e) : (n.prototype = e.prototype, new n)
         },
         b = {};
+    
+    //ball colours
+    
+    //original
     // ~["eee4da", "ede0c8", "f2b179", "f59563", "f67c5f", "f65e3b", "edcf72", "edcc61", "edc850", "edc53f", "edc22e"].forEach(function(t, e) {
     //     b[Math.pow(2, e + 1)] = "#" + t
     // });
-    ~["000000", "001133", "002266", "003399", "0044AA", "0055BB", "0066CC", "0077DD", "0088EE", "0099FF", "33BBFF"].forEach(function(t, e) {
+
+    //previous
+   // ~["000000", "001133", "002266", "003399", "0044AA", "0055BB", "0066CC", "0077DD", "0088EE", "0099FF", "33BBFF"].forEach(function(t, e) {
+    //    b[Math.pow(2, e + 1)] = "#" + t
+    //});
+
+    ~["4285F4", "FBBC05", "34A853", "EA4335", "F65314", "7CBB00", "00A1F1", "FFBB00", "7B0099", "E50914", "221F1F"].forEach(function(t, e) {
         b[Math.pow(2, e + 1)] = "#" + t
     });
+
     var E = function(e) {
             function n(n, o, s, i) {
-                void 0 === o && (o = -40), void 0 === s && (s = 2), void 0 === i && (i = !0), e.call(this, 1 + .2 * Math.log10(s)), ++it[this.n = s], this.r = 40 + 4 * (Math.log2(s) - 1), this.font = "bold " + (.1 * this.r + 28) + "px 'Segoe UI','Helvetica Neue',sans-serif";
+               // void 0 === o && (o = -40), void 0 === s && (s = 2), void 0 === i && (i = !0), e.call(this, 1 + .2 * Math.log10(s)), ++it[this.n = s], this.r = 40 + 4 * (Math.log2(s) - 1), this.font = "bold " + (.1 * this.r + 28) + "px 'Segoe UI','Helvetica Neue',sans-serif";
+               //ball text
+               // this.r = a + b * (Math.log2(s) - 1)
+               //a initial ball size
+               //b increment to ball size
+               void 0 === o && (o = -40), void 0 === s && (s = 2), void 0 === i && (i = !0), e.call(this, 1 + .2 * Math.log10(s)), ++it[this.n = s], this.r = 20 + 20 * (Math.log2(s) - 1), this.font = "bold " + (.1 * this.r + 72) + "px 'Segoe UI','Helvetica Neue',sans-serif";
+                
                 for (var r = t(this.r), a = 2 * Math.PI / r, c = 0; c < r; ++c) {
                     var f = c * a;
                     new M(this, n + this.r * Math.cos(f), o + this.r * Math.sin(f))
@@ -351,6 +375,12 @@ var incLeft = 0;
                 this.x = n * i, this.y = o * i
             }, t
         }(),
+        //P = null,
+        //T = 960,
+        //S = 540,
+        //B = 16 / 9,
+        //I = 1,
+
         P = null,
         T = 960,
         S = 540,
@@ -420,12 +450,22 @@ var incLeft = 0;
         V = document.getElementById("end"),
         X = document.getElementById("reset");
     W.addEventListener("mousedown", r), W.addEventListener("touchstart", r), z.addEventListener("mousedown", a), z.addEventListener("touchstart", a), V.addEventListener("mousedown", r), V.addEventListener("touchstart", r), X.addEventListener("mousedown", f), X.addEventListener("touchstart", f);
-    var Y = .6,
-        G = .1,
-        J = 40,
-        K = .9,
-        Q = .6,
-        Z = .24,
+    var Y = .01, //gravity
+        G = 0.2, //rebound on collision >1 means they don't merge
+        J = 5, //ball harness
+        K = .1, //rolling friction
+        Q = .01 //drag damping
+        Z = .05, //spring drag force
+
+        //orignal values
+        //Y = .6,
+        //G = .1,
+        //J = 40,
+        //K = .9,
+        //Q = .6,
+        //Z = .24,
+
+
         $ = [],
         tt = [],
         et = [],
@@ -459,7 +499,8 @@ var incLeft = 0;
             }
 
             function s(t) {
-                return .00390625 * Math.pow(1.059463094, t - 128)
+            //music frequency
+               return .00390625 * Math.pow(1.059463094, t - 128)
             }
             var i, r, a = 44100,
                 c = 2,
