@@ -273,7 +273,7 @@ var incLeft = 0;
     //    b[Math.pow(2, e + 1)] = "#" + t
     //});
 
-    ~["4285F4", "FBBC05", "34A853", "EA4335", "F65314", "7CBB00", "00A1F1", "FFBB00", "7B0099", "E50914", "221F1F"].forEach(function(t, e) {
+    ~["FF0000", "FFDD00", "33FF00", "00FF20", "0037FF", "C800FF", "FF00EA", "FF8C00", "000000", "827E7E", "FFFFFF"].forEach(function(t, e) {
         b[Math.pow(2, e + 1)] = "#" + t
     });
 
